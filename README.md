@@ -30,10 +30,15 @@ Plus, you can enjoy text summaries and choose from different voice options, like
 - Flutter: [Installation guide](https://flutter.dev/docs/get-started/install)
 - MongoDB: [Installation instructions](https://www.mongodb.com/try/download/community)
 
-
+### Installation
 1. Clone the Repository
    ```bash
-   git clone <repository-url>
-   cd <project-directory>
+   git clone [<repository-url>](https://github.com/linga-007/Dream_PDF.git)
+   cd Dream_PDF
+
+
+
+## 🟩 Output Screens
+
 
 
