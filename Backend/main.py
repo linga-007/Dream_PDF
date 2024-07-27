@@ -77,7 +77,7 @@ def tokenization_prediction(text , labeled_sentences):
         return_tensors='pt'
     )
 
-    input_ids = tokenizer.encode(text, add_special_tokens=True,max_length=MAX_LEN,pad_to_max_length=True)
+    input_ids = tokenizer.encode(text, add_special_tokens=True,truncation=True,padding=True)
 
     attention_masks = [float(i>0) for i in input_ids]
 
