@@ -5,6 +5,10 @@ DreamPDF is a revolutionary app that enhances the reading experience of PDF docu
 
 Plus, you can enjoy text summaries and choose from different voice options, like male or female, to suit your preference. ✨
 
+
+## 🟩 Workflow
+![image](Images/workflow.png)
+
 ## 🟩 Tech Stack 💻
 
 ### Frontend
@@ -17,7 +21,6 @@ Plus, you can enjoy text summaries and choose from different voice options, like
 ### Database
 - **MongoDB**
 
-## 🟩 Workflow
 
 ## 🟩 Getting Started 
 
