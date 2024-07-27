@@ -33,7 +33,7 @@ Plus, you can enjoy text summaries and choose from different voice options, like
 ### Installation
 1. Clone the Repository
    ```bash
-   git clone [<repository-url>](https://github.com/linga-007/Dream_PDF.git)
+   git clone https://github.com/linga-007/Dream_PDF.git
    cd Dream_PDF
 
 
