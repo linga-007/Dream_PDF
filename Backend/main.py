@@ -9,7 +9,7 @@ import numpy as np
 import torch
 from transformers import BertForSequenceClassification, BertTokenizer
 
-
+from sentiment_words import get_sentiment_words
 
 def extract_text(file_name,labeled_sentences):
     s = ''  
@@ -43,7 +43,8 @@ def extract_text(file_name,labeled_sentences):
         q.append(i)
         tokenization_prediction(i,labeled_sentences)
     print("size is", len(page_content))
-
+    get_sentiment_words(q)
+    
     # Save sentences to a file (if needed)
     # with open('sentences.txt', 'w') as f:
     #     for i in q:

@@ -5,6 +5,8 @@ from flask_cors import CORS
 from main import extract_text
 from Audio.toranto.aud import generate_audio
 
+from Audio_generation import combining_audios
+
 app = Flask(__name__, static_folder='E:/Dream_PDF/Backend/Generated_Audio')
 CORS(app)
 
@@ -62,7 +64,7 @@ def upload_file():
         print("finally the combined text is ", combined_sentences)
 
         # Generate audio and get timestamps
-        time_stamp = generate_audio(combined_sentences, file_name)
+        time_stamp = combining_audios(combined_sentences, "Generatedaudio")
         
         if time_stamp is None:
             time_stamp = []  # Ensure time_stamp is an empty list if None
