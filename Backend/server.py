@@ -4,6 +4,9 @@ from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 from main import extract_text
 from Audio.toranto.aud import generate_audio
+from flask import Flask, request, jsonify
+from pymongo import MongoClient
+from bson.json_util import dumps
 
 import json
 
@@ -15,6 +18,12 @@ CORS(app)
 
 UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+# mongo url
+mongo_uri = "mongodb+srv://admin:root12@cluster0.iycxjhk.mongodb.net/dreampdf?retryWrites=true&w=majority&appName=Cluster0"
+client = MongoClient(mongo_uri)
+db = client['dreampdf']
+collection = db['pdf_names']
 
 file_name = ''
 
@@ -63,6 +72,10 @@ def upload_file():
         for label, sentences in unique_sentences.items():
             combined_text = " ".join(sentences)  # Join sentences into a single string
             combined_sentences[combined_text] = label
+        x = file_name
+        y = combined_sentences
+        res = collection.insert_one({'pdf_name': x , 'pdf_content' : y })
+
 
         print("finally the combined text is ", combined_sentences)
 
@@ -91,6 +104,10 @@ def getwords():
     return array_2d
 
 
+@app.route('/get_pdfs', methods=['GET'])
+def get_pdfs():
+    pdfs = collection.find()
+    return dumps(list(pdfs)), 200
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
