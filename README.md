@@ -25,7 +25,7 @@ DreamPDF is a revolutionary app that enhances the reading experience of PDF docu
   | ![Flutter](https://img.shields.io/badge/Flutter--brightgreen) |
     |:---:|
 ### Backend :
- | ![Node.js](https://img.shields.io/badge/Node.js--blue) | ![Express.js](https://img.shields.io/badge/Express.js--red) |
+ | ![Python](https://img.shields.io/badge/Python--yellow) |
   |:---:|:---:|
 
 ### Database
