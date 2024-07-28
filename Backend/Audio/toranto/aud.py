@@ -26,7 +26,7 @@ def generate_audio(combined_sentences, file_name):
             sentences += j
         # print("sentence to be converted to voice is ", sentences)
         audio_generation(sentences, combined_sentences[i])
-        generated_file.append(generated_file) 
+        generated_file.append(generated_file)
     return l
 
 def audio_generation(text, sentiment):
@@ -111,3 +111,8 @@ def get_random_file_from_directory(directory):
         raise ValueError("No files found in the directory.")
     
     return os.path.join(directory, random.choice(files))
+
+
+
+
+
