@@ -1,4 +1,6 @@
-# Dream_PDF 📖
+<div align="center">
+  <h1 align="center">Dream_PDF : Read. Understand. Innovate 📖</h1>
+</div>
 
 ## 🟩 Overview
 DreamPDF is a revolutionary app that enhances the reading experience of PDF documents. Users can easily upload PDFs, and the app identifies people, places, and emotional words within the text. These emotions are highlighted and reflected in the voice modulation during narration, making the reading lively and engaging. Combining advanced technology with a user-friendly design, DreamPDF offers a unique, immersive way to read and interact with PDF documents. ✨
