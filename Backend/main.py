@@ -3,6 +3,7 @@ import re
 import nltk
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import numpy as np
+import json
 # nltk.download('punkt')
 # nltk.download('stopwords')
 
@@ -11,7 +12,9 @@ from transformers import BertForSequenceClassification, BertTokenizer
 
 from sentiment_words import get_sentiment_words
 
+
 def extract_text(file_name,labeled_sentences):
+
     s = ''  
     file_path = f'./uploads/{file_name}'
     doc = fitz.open(file_path)
@@ -43,8 +46,13 @@ def extract_text(file_name,labeled_sentences):
         q.append(i)
         tokenization_prediction(i,labeled_sentences)
     print("size is", len(page_content))
-    get_sentiment_words(q)
-    
+    sentiment_words_final = get_sentiment_words(q)
+    with open('data_2d.txt', 'w') as file:
+        for row in sentiment_words_final:
+            line = ','.join(map(str, row))  # Convert each row to a comma-separated string
+            file.write(line + '\n')
+
+
     # Save sentences to a file (if needed)
     # with open('sentences.txt', 'w') as f:
     #     for i in q:

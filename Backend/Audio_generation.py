@@ -42,7 +42,7 @@ def final_audio(audio_files, output_folder):
         audio = AudioSegment.from_file(file)
         combined += audio
     
-    output_file = os.path.join(output_folder, "result_pdfaudio.wav")
+    output_file = os.path.join(output_folder, "result.wav")
     combined.export(output_file, format='wav')
 
     # Remove temp files
@@ -51,6 +51,6 @@ def final_audio(audio_files, output_folder):
 
     print(f'Final audio saved as {output_file}')
 
-output_folder = "generated_audio"  #path
+output_folder = "generatedaudio"  #path
 
 # combining_audios(texts_and_sentiments, output_folder)

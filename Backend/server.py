@@ -5,9 +5,12 @@ from flask_cors import CORS
 from main import extract_text
 from Audio.toranto.aud import generate_audio
 
+import json
+
 from Audio_generation import combining_audios
 
-app = Flask(__name__, static_folder='E:/Dream_PDF/Backend/Generated_Audio')
+
+app = Flask(__name__, static_folder='Generatedaudio')
 CORS(app)
 
 UPLOAD_FOLDER = 'uploads'
@@ -75,7 +78,18 @@ def upload_file():
             timestamp = time_stamp.pop(0) if time_stamp else 0
             result.append({"text": text, "label": label, "timestamp": timestamp})
         
+        # print("in server.py sentiment words is " , sentiment_words_finals)
+        
         return jsonify({'message': 'File uploaded successfully', 'file': result, "timeStamp": time_stamp}), 200
+    
+@app.route('/getwords',methods=['GET'])
+def getwords():
+    with open('data_2d.txt', 'r') as file:
+        array_2d = [line.strip().split(',') for line in file.readlines()]
+    
+    print("Loaded 2D array:", array_2d)
+    return array_2d
+
 
 
 if __name__ == '__main__':
